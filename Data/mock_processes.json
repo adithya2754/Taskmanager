@@ -1,0 +1,151 @@
+{
+  "processes": [
+    {
+      "id": "proc1",
+      "pid": 1234,
+      "name": "chrome.exe",
+      "user": "Anirudh",
+      "cpu": 12.3,
+      "memory": 250.7,
+      "startTime": "2025-04-12T09:15:00Z",
+      "path": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+      "threads": 47,
+      "handles": 102,
+      "classes": ["Browsers", "Favorites"]
+    },
+    {
+      "id": "proc2",
+      "pid": 5678,
+      "name": "notepad.exe",
+      "user": "Anirudh",
+      "cpu": 0.1,
+      "memory": 15.2,
+      "startTime": "2025-04-12T10:00:00Z",
+      "path": "C:/Windows/System32/notepad.exe",
+      "threads": 5,
+      "handles": 21,
+      "classes": []
+    },
+    {
+      "id": "proc3",
+      "pid": 9012,
+      "name": "firefox.exe",
+      "user": "Anirudh",
+      "cpu": 8.5,
+      "memory": 180.5,
+      "startTime": "2025-04-12T09:30:00Z",
+      "path": "C:/Program Files/Mozilla Firefox/firefox.exe",
+      "threads": 32,
+      "handles": 78,
+      "classes": ["Browsers"]
+    },
+    {
+      "id": "proc4",
+      "pid": 3456,
+      "name": "code.exe",
+      "user": "Anirudh",
+      "cpu": 5.2,
+      "memory": 350.1,
+      "startTime": "2025-04-12T08:45:00Z",
+      "path": "C:/Program Files/Microsoft VS Code/code.exe",
+      "threads": 28,
+      "handles": 120,
+      "classes": ["Development", "Favorites"]
+    },
+    {
+      "id": "proc5",
+      "pid": 7890,
+      "name": "spotify.exe",
+      "user": "Anirudh",
+      "cpu": 3.7,
+      "memory": 120.8,
+      "startTime": "2025-04-12T09:00:00Z",
+      "path": "C:/Program Files/Spotify/spotify.exe",
+      "threads": 15,
+      "handles": 68,
+      "classes": ["Media"]
+    },
+    {
+      "id": "proc6",
+      "pid": 1357,
+      "name": "steam.exe",
+      "user": "Anirudh",
+      "cpu": 1.9,
+      "memory": 80.3,
+      "startTime": "2025-04-12T10:15:00Z",
+      "path": "C:/Program Files (x86)/Steam/steam.exe",
+      "threads": 18,
+      "handles": 95,
+      "classes": ["Games"]
+    },
+    {
+      "id": "proc7",
+      "pid": 2468,
+      "name": "game.exe",
+      "user": "Anirudh",
+      "cpu": 22.4,
+      "memory": 512.0,
+      "startTime": "2025-04-12T11:20:00Z",
+      "path": "C:/Program Files/Games/game.exe",
+      "threads": 24,
+      "handles": 130,
+      "classes": ["Games"]
+    },
+    {
+      "id": "proc8",
+      "pid": 8642,
+      "name": "explorer.exe",
+      "user": "SYSTEM",
+      "cpu": 0.3,
+      "memory": 45.6,
+      "startTime": "2025-04-12T08:00:00Z",
+      "path": "C:/Windows/explorer.exe",
+      "threads": 12,
+      "handles": 210,
+      "classes": ["System"]
+    },
+    {
+      "id": "proc9",
+      "pid": 9753,
+      "name": "system.exe",
+      "user": "SYSTEM",
+      "cpu": 0.2,
+      "memory": 28.4,
+      "startTime": "2025-04-12T08:00:00Z",
+      "path": "C:/Windows/System32/system.exe",
+      "threads": 6,
+      "handles": 42,
+      "classes": ["System"]
+    }
+  ],
+  "process_classes": [
+    {
+      "name": "All Processes",
+      "processes": []
+    },
+    {
+      "name": "Favorites",
+      "processes": ["proc1", "proc4"]
+    },
+    {
+      "name": "Browsers",
+      "processes": ["proc1", "proc3"]
+    },
+    {
+      "name": "Games",
+      "processes": ["proc6", "proc7"]
+    },
+    {
+      "name": "Development",
+      "processes": ["proc4"]
+    },
+    {
+      "name": "Media",
+      "processes": ["proc5"]
+    },
+    {
+      "name": "System",
+      "processes": ["proc8", "proc9"]
+    }
+  ]
+}

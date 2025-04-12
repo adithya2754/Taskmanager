@@ -1,0 +1,99 @@
+{
+  "format": 1,
+  "restore": {
+    "/mnt/d/2/ProcessViewManager-1/Taskmanager/ProcessView.csproj": {}
+  },
+  "projects": {
+    "/mnt/d/2/ProcessViewManager-1/Taskmanager/ProcessView.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/d/2/ProcessViewManager-1/Taskmanager/ProcessView.csproj",
+        "projectName": "ProcessView",
+        "projectPath": "/mnt/d/2/ProcessViewManager-1/Taskmanager/ProcessView.csproj",
+        "packagesPath": "/home/schrikmsh/.nuget/packages/",
+        "outputPath": "/mnt/d/2/ProcessViewManager-1/Taskmanager/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/schrikmsh/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Avalonia.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Avalonia.ReactiveUI": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Avalonia.Themes.Fluent": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "ReactiveUI": {
+              "target": "Package",
+              "version": "[19.4.1, )"
+            },
+            "ReactiveUI.Fody": {
+              "target": "Package",
+              "version": "[19.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.119/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ProcessView.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="ProcessView.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/app-icon.svg"
+        Title="ProcessView - Task Manager">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto,*">
+        <!-- Menu Bar -->
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Export Selected to Patch" Command="{Binding ExportPatchCommand}" />
+                <Separator />
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}" />
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem Header="Refresh" Command="{Binding RefreshCommand}" />
+                <Separator />
+                <MenuItem Header="Toggle Theme" Command="{Binding ToggleThemeCommand}" />
+            </MenuItem>
+            <MenuItem Header="Process">
+                <MenuItem Header="Add to Class" Command="{Binding AddToClassCommand}" />
+            </MenuItem>
+        </Menu>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1" ColumnDefinitions="250,*">
+            <!-- Sidebar -->
+            <Border Grid.Column="0" Background="{DynamicResource SystemControlBackgroundAltHighBrush}" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}" BorderThickness="0,0,1,0">
+                <Grid RowDefinitions="Auto,*,Auto">
+                    <!-- Header -->
+                    <TextBlock Grid.Row="0" Text="Classes" FontWeight="Bold" Margin="20,20,0,10" />
+                    
+                    <!-- Classes List -->
+                    <ListBox Grid.Row="1" ItemsSource="{Binding ProcessClasses}" SelectedItem="{Binding SelectedClass}" Margin="10,0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    
+                    <!-- Create Class Button -->
+                    <Button Grid.Row="2" Content="+ Create Class" HorizontalAlignment="Stretch"
+                            Command="{Binding CreateClassCommand}" Margin="10" />
+                </Grid>
+            </Border>
+            
+            <!-- Process List -->
+            <Grid Grid.Column="1" RowDefinitions="Auto,*">
+                <!-- Process Filter -->
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+                    <TextBox Text="{Binding SearchTerm}" Watermark="Search processes..." Width="250" Margin="0,0,10,0" />
+                    <CheckBox Content="Show system processes" IsChecked="{Binding ShowSystemProcesses}" VerticalAlignment="Center" Margin="10,0" />
+                </StackPanel>
+                
+                <!-- Process Grid -->
+                <DataGrid Grid.Row="1" ItemsSource="{Binding FilteredProcesses}" 
+                          AutoGenerateColumns="False" 
+                          CanUserResizeColumns="True" 
+                          IsReadOnly="True"
+                          SelectionMode="Extended"
+                          x:Name="ProcessesGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
+                        <DataGridTextColumn Header="PID" Binding="{Binding Pid}" Width="80" />
+                        <DataGridTextColumn Header="CPU %" Binding="{Binding Cpu}" Width="80" />
+                        <DataGridTextColumn Header="Memory MB" Binding="{Binding Memory}" Width="100" />
+                        <DataGridTextColumn Header="User" Binding="{Binding User}" Width="120" />
+                        <DataGridTextColumn Header="Start Time" Binding="{Binding StartTime}" Width="150" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>
